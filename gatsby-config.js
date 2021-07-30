@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Transformación Digital`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Justo IT es la empresa con transformación digital con la mayor cobertura de la región, integra 5 pilares claves para que tu estrategia tenga el impacto deseado tanto en lo público como lo privado. Nuestra herramienta te brinda insumos que te permiten un manejo adecuado de tu ecosistema digital, combinando motores de inteligencia artificial y procesamiento natural del lenguaje.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
