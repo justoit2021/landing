@@ -7,7 +7,7 @@ import i18n from 'i18next'
 import es from '../i18n/es'
 import en from '../i18n/en'
 
-const lang = localStorage.getItem('language') === null ? 'es' : localStorage.getItem('language');
+const lang = window.localStorage.getItem('language') === null ? 'es' : localStorage.getItem('language');
 
 i18n.init({
   lng: lang,
