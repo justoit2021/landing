@@ -4,22 +4,20 @@ import i18n from 'i18next'
 import es from '../i18n/es'
 import en from '../i18n/en'
 
-const lang = 'es'; //localStorage.getItem('language') === null ? 'es' : localStorage.getItem('language');
-
-i18n.init({
-  lng: lang,
-  debug: true,
-  resources: {
-    en: {
-      translation: en
-    },
-    es: {
-      translation: es
+const Main = (props) => {
+  i18n.init({
+    lng: props.langs,
+    debug: true,
+    resources: {
+      en: {
+        translation: en
+      },
+      es: {
+        translation: es
+      }
     }
-  }
-});
+  });
 
-const Main = () => {
   return (
     <div className="background-container">
       <div className='bg-main'>

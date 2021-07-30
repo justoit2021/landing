@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,13 +25,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `JustoIT`} />
+      <Header siteTitle={data.site.siteMetadata?.title || `JustoIT`} settingLang={(e) => props.setLanguage(e)} />
       <div
         style={{
           margin: `0 auto`,
         }}
       >
-        <main>{children}</main>
+        <main>{props.children}</main>
         <footer className='footer-sub'>
           JUSTOIT Copyright - Todos los derechos reservados 2021
         </footer>

@@ -14,24 +14,23 @@ type DataProps = {
   }
 }
 
-const lang = 'es'; //localStorage.getItem('language') === null ? 'es' : localStorage.getItem('language');
-
-i18n.init({
-  lng: lang,
-  debug: true,
-  resources: {
-    en: {
-      translation: en
-    },
-    es: {
-      translation: es
-    }
-  }
-});
-
-const Header: React.FC<PageProps<DataProps>> = () => {
+const Header: React.FC<PageProps<DataProps>> = (props:any) => {
   const [openNavApp, setOpenNavApp] = React.useState(false);
   const [aninav, setaninav] = React.useState(false);
+  const [lang, setLang] = React.useState('es')
+
+  i18n.init({
+    lng: lang,
+    debug: true,
+    resources: {
+      en: {
+        translation: en
+      },
+      es: {
+        translation: es
+      }
+    }
+  });
 
   return (
     <header className='container'>
@@ -76,8 +75,8 @@ const Header: React.FC<PageProps<DataProps>> = () => {
         </div>
         {lang === 'es' ? (
           <div className='menu-list' style={{cursor:'pointer'}} onClick={() => {
-            localStorage.setItem('language', 'en');
-            location.reload();
+            setLang('en');
+            props.settingLang('en');
           }}>
             <StaticImage
               src="../images/usa.svg"
@@ -87,8 +86,8 @@ const Header: React.FC<PageProps<DataProps>> = () => {
           </div>
         ) : (
           <div className='menu-list' style={{cursor:'pointer'}} onClick={() => {
-            localStorage.setItem('language', 'es');
-            location.reload();
+            setLang('es');
+            props.settingLang('es');
           }}>
             <StaticImage
               src="../images/spain.svg"
@@ -147,8 +146,8 @@ const Header: React.FC<PageProps<DataProps>> = () => {
             </div>
             {lang === 'es' ? (
               <div className='menu-list' style={{cursor:'pointer'}} onClick={() => {
-                localStorage.setItem('language', 'en');
-                location.reload();
+                setLang('en');
+                props.settingLang('en');
               }}>
                 <StaticImage
                   src="../images/usa.svg"
@@ -158,8 +157,8 @@ const Header: React.FC<PageProps<DataProps>> = () => {
               </div>
             ) : (
               <div className='menu-list' style={{cursor:'pointer'}} onClick={() => {
-                localStorage.setItem('language', 'es');
-                location.reload();
+                setLang('es');
+                props.settingLang('es');
               }}>
                 <StaticImage
                   src="../images/spain.svg"
